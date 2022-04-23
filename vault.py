@@ -1062,6 +1062,8 @@ Enter An Application Type
 
 [1] - Bundle - [HTML, JS, CSS]
 [2] - Python
+[3] - C
+[4] - C++
 
 => """)
 
@@ -1073,13 +1075,23 @@ Enter An Application Type
     
     if answer == "2":
 
-        projectbase.create_dir()
+        directory = input("Enter A Project Name => ")
+    
+        # Parent Directory path
+        parent_dir = os.getcwd()
+    
+        # Path
+        path = os.path.join(parent_dir, directory)
+
+        os.mkdir(path)
+
+        print("")
 
         file_name = input("Enter A File Name => ")
 
         file = f"{file_name}.py"
 
-        with open(os.path.join(parent_dir, file), 'w') as fp:
+        with open(os.path.join(path, file), 'w') as fp:
 
             fp.writelines("")
 
@@ -1243,6 +1255,48 @@ import {import_5}''')
         with open(os.path.join(path, file3), 'w') as fp3:
 
             fp3.writelines("")
+
+    if answer == "3":
+
+        directory = input("Enter A Project Name => ")
+    
+        # Parent Directory path
+        parent_dir = os.getcwd()
+        
+        # Path
+        path = os.path.join(parent_dir, directory)
+
+        os.mkdir(path)
+
+        print("")
+
+        file_name = input("Enter A File Name => ")
+
+        file = f"{file_name}.c"
+
+        with open(os.path.join(path, file), 'w') as fp:
+            fp.writelines("")
+
+    if answer == "4":
+
+        directory = input("Enter A Project Name => ")
+    
+        # Parent Directory path
+        parent_dir = os.getcwd()
+        
+        # Path
+        path = os.path.join(parent_dir, directory)
+
+        os.mkdir(path)
+
+        print("")
+
+        file_name = input("Enter A File Name => ")
+
+        file = f"{file_name}.cpp"
+
+        with open(os.path.join(path, file), 'w') as fp:
+            fp.writelines("")
                 
                 
 

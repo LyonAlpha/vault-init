@@ -13,5 +13,4 @@ def create_dir():
     
 
     os.mkdir(path)
-    print("Directory '% s' Created" % directory)
     print("")
