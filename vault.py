@@ -1,11 +1,12 @@
 import os
 import re
 from sys import exit
+import projectbase
 
 # Parent Directory path
 parent_dir = os.getcwd()
 
-split_dir = re.split(r'\\|!|\\', parent_dir);
+split_dir = re.split(r'\\|!|\\', parent_dir)
 
 
 
@@ -30,6 +31,8 @@ Enter An Application Type
 [4] - JavaScript
 [5] - HTMl
 [6] - CSS
+[7] - C
+[8] - C++
 
 => """)
 
@@ -1027,12 +1030,29 @@ import {import_5}\n''' + old)
 
             fp.writelines("")
 
+    if answer == "7":
+
+        file_name = input("Enter A File Name => ")
+
+        file = f"{file_name}.c"
+
+        with open(os.path.join(parent_dir, file), 'w') as fp:
+            fp.writelines("")
+
+    if answer == "8":
+
+        file_name = input("Enter A File Name => ")
+
+        file = f"{file_name}.cpp"
+
+        with open(os.path.join(parent_dir, file), 'w') as fp:
+            fp.writelines("")
 
         
 
 
 
-import projectbase
+
 
 if startup == "2":
 
