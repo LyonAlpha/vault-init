@@ -20,14 +20,15 @@ try:
     os.mkdir(newPath)
     os.chdir(project_name)
     currentPath = os.getcwd()
-    dependencyPath = joinPath(currentPath,project_files_folder_name)
-    os.mkdir(dependencyPath)
     src = 'src'
     src_path = f'{currentPath}/{src}'
     os.mkdir(src_path)    
     os.chdir(src)
     with open('main.cpp', 'w') as f:
         f.write('')
+    dependencyPathBase = joinPath(currentPath, src) 
+    dependencyPath = joinPath(dependencyPathBase,project_files_folder_name)
+    os.mkdir(dependencyPath)
     os.system('cmdreset')
     # time.sleep(5)
     clearTerminal()
